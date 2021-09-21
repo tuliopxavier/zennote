@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100;1,300;1,400&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+header {
+    width: 100%;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+}
+
+button,
+a {
+    cursor: pointer;
+    border: 0;
+    outline: 0;
+    text-decoration: none;
+}
+
+.container {
+    max-width: 90%;
+    margin-inline: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.title {
+    flex: 1 1 100%;
+    text-align: center;
+    margin-bottom: 0.4rem;
+}
+
+.wrap {
+    flex: 1 1 100%;
+    font-size: 1.2em;
+    display: flex;
+    justify-content: space-between;
+}
+
+.search {
+    position: relative;
+    flex: 1 1 auto;
+}
+
+.search label {
+    position: absolute;
+    left: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    z-index: 1;
+}
+
+.search-input {
+    height: 2rem;
+    padding-left: 2rem;
+    padding-right: 0.5rem;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: all 0.3s ease-in-out;
+    border: 0;
+}
+
+.filter-btn {
+    height: 2rem;
+    padding-inline: 0.7rem;
+}
+
+.filter-modal {
+    background-color: #f2f3f5;
+    width: 260px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transform: translate(0, calc(100% + 2px));
+    border-radius: 0 0 4px 4px;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.3);
+    transform-origin: 0 0;
+    padding: 16px;
+    z-index: 1;
+    transition: scale 0.1s ease, opacity 0.1s ease;
+}
+
+.filter-modal.hidden {
+    transform: scale(0.5);
+    opacity: 0;
+}
+
+.search-input.active {
+    transform: scaleX(1);
+    border: 1px solid #ccc;
+}
+
+.section-add-todo {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    background-color: #ccc;
+}
+
+.section-add-todo .extras {
+    display: block;
+    height: 0;
+    overflow: hidden;
+    transition: height 0.3s ease-in-out;
+}
+
+.section-add-todo .extras.active {
+    height: 70px;
+}
+
+.section-add-todo .data-incial {
+
+    margin-right: 1rem;
+}
+
+.section-add-todo .add-task {
+    width: 100%;
+    padding: 0.5rem;
+    position: relative;
+    font-size: 1.5em;
+}
+.section-add-todo .add-task textarea {
+    width: 100%;
+    padding: 5px 20px 5px 10px;
+    border-radius: 10px;
+    border: 1px solid #000;
+    resize: none;
+}
+
+.section-add-todo .add-task button {
+    position: absolute;
+    right: 15px;
+    bottom: 20px;
+    color: #5db075;
+    background-color: transparent;
+}
+
+.section-add-todo .add-task button i {
+    font-size: 1.8em;
+}
+
+.todo-container {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 70px;
+}
+
+.task {
+    box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.302), 0 2px 6px 2px rgba(60, 64, 67, 0.149);
+    border-radius: 5px;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    overflow: hidden;
+}
+
+.task .title-task {
+    word-wrap: break-word;
+    font-size: 1.2em;
+    text-align: left;
+    width: 100%;
+}
+
+.task.tachado {
+    text-decoration: line-through;
+}
+
+.task .check {
+    background-color: transparent;
+    padding: 0.5rem;
+}
+
+.task .check i {
+    font-size: 1.5em;
+}
+
+.task .options {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 0.5rem;
+    border-top: solid 1px #ccc;
+}
+
+.task .options .id-task {
+    margin-right: auto;
+}
+
+.task .options button {
+    background-color: transparent;
+    padding: 0.5rem;
+    margin-inline: 0.5rem;
+}
+
+.task .options button i {
+    font-size: 1.2em;
+}

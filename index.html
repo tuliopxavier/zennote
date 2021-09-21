@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.15.1/css/all.css">
+    <link rel="shortcut icon" href="#" type="image/x-icon"> <!-- TODO -->
+
+    <script src="./js/index.js" defer></script>
+
+    <title>Checkpoint2</title>
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <div class="title">
+                <h1>Titulo</h1>
+            </div>
+            <div class="wrap">
+                <div class="search" id="search">
+                    <label for="searchInput">
+                        <i class="fas fa-search"></i>
+                    </label>
+                    <input class="search-input" id="searchInput" type="text" placeholder="Pesquisar">
+                </div>
+                <div class="filter">
+                    <button class="filter-btn">
+                        <i class="fas fa-filter"></i>
+                        <span>Filtros</span>
+                    </button>
+                    <div class="filter-modal hidden" id="filterModal">
+                        <p>Filtros</p>
+                        <button class="apply-button">Apply</button><button class="cancel-button">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section>
+            <div class="todo-container" id="todoContainer">
+
+                <div class="task">
+                    <input class="ckeck" type="checkbox" name="" id="">
+                    <p class="title-task">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus praesentium magnam quaerat
+                        nesciunt quibusdam aliquam adipisci, cumque qui, aliquid ad ex nobis suscipit architecto animi
+                        ipsum alias earum possimus odio.</p>
+                    <div class="options">
+                        <span class="id-task">id:01</span>
+                        <button class="edit-button">
+                            <i class="fas fa-pen"></i>
+                        </button>
+                        <button class="delete-button">
+                            <i class="fas fa-trash-alt"></i>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="section-add-todo" id="sectionAddTodo">
+            <div class="add-todo">
+                <form class="add-todo-form" id="addForm" autocomplete="off">
+                    <div class="extras" id="extras">
+                        <div class="categoria">
+                            <button></button>
+                            <select name="categorias" id="categorias">
+                                <!-- TODO -->
+                            </select>
+                        </div>
+                        <div class="data-incial">
+                            <span>Criado em: </span>
+                            <input type="text" name="data" id="data" readonly></input>
+                        </div>
+                    </div>
+
+                    <div class="add-task" id="addTask">
+                        <textarea id="addTaskInput" name="title" maxlength="150" placeholder="Adicionar tarefa"></textarea>
+                        <button type="submit">
+                            <i class="fas fa-arrow-circle-up"></i>
+                        </button>
+                    </div>
+
+                </form>
+            </div>
+        </section>
+    </main>
+
+
+
+</body>
+
+</html>
