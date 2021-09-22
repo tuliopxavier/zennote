@@ -30,12 +30,9 @@ header {
     padding-bottom: 2rem;
 }
 .container {
-    max-width: 90%;
+    width: 90%;
+    max-width: 1000px;
     margin-inline: auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
 }
 
 .title {
@@ -114,6 +111,8 @@ header {
     position: fixed;
     width: 100%;
     bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
     background-color: var(--bg-primary);
     border-top-left-radius: 1.5rem 0.8rem;
     border-top-right-radius: 1.5rem 0.8rem;
@@ -174,6 +173,9 @@ header {
 
 /* Local onde as task ficam */
 .todo-container {
+    width: 90%;
+    max-width: 800px;
+    margin-inline: auto;
     padding: 1rem;
     display: flex;
     flex-direction: column;
