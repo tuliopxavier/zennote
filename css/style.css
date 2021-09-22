@@ -15,23 +15,24 @@
 .btn-bk {
     font-size: 1.5rem;
     text-indent: 0.5rem;
-    display:flex;
+    display:flex !important;
     align-items: center;
     justify-content: center;
-    margin-bottom: 2rem;
+    margin-bottom: 2rem !important;
   }
+
   
   input:checked {
-    background-color:#2c2f33 !important;
-    border-bottom-color: #2c2f33 !important;
-    border-color:#ffffff !important;
+    background-color:#202124 !important;
+    border-bottom-color: #202124 !important;
+    border-color:#e8eaed !important;
   
   
   }
   input {
-    background-color:#ffffff !important;
-    border-bottom-color: #ffffff !important;
-    border-color:#2c2f33 !important;
+    background-color:#e8eaed !important;
+    border-bottom-color: #e8eaed !important;
+    border-color:#202124 !important;
   
   }
   

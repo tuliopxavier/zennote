@@ -104,18 +104,19 @@ document.addEventListener('click', function (e) {
     }
 
 
-})
+});
+
+/* FUNÇÃO DARK MODE */
     function mudarCor(cb) {
 
         elemento = document.getElementById("fundo");
         icone = document.getElementsByClassName("fa-pen");
 
 
-    elemento.style.backgroundColor = cb.checked ? "#ffffff" : "#2c2f33";
-    elemento.style.color = cb.checked ? "#2c2f33" : "#ffffff";
-    icone.style.color = cb.checked ? "#2c2f33" : "#ffffff";
-    }
-    ;
+    elemento.style.backgroundColor = cb.checked ? "#e8eaed" : "#202124";
+    elemento.style.color = cb.checked ? "#202124" : "#e8eaed";
+    icone.style.color = cb.checked ? "#202124" : "#e8eaed";
+    };
 
 
 
