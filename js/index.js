@@ -2,12 +2,15 @@ const div_search = document.getElementById('search');
 const input_addTask = document.getElementById('addTaskInput');
 const addForm = document.getElementById('addForm');
 const section_Addtask = document.getElementById('sectionAddTodo');
-const date = new Date()
+const date = new Date();
 const todos = [];
+let idGlobal = 0;
+
 
 function addTodotoArray(obj) {
+    obj.id = idGlobal;
     todos.push(obj);
-    createTask(obj, todos.length);
+    createTask(obj, idGlobal++);
 }
 
 function createTask(obj, id) {
@@ -17,20 +20,29 @@ function createTask(obj, id) {
         div_task.classList.add('tachado');
     }
     div_task.innerHTML = `
-        <input class="ckeck" type="checkbox" name="" id="">
+        <input class="check" type="checkbox" name="" id="">
         <p class="title-task">${obj.title}</p>
         <div class="options">
             <span class="id-task">id: ${id}</span>
             <button class="edit-button">
                 <i class="fas fa-pen"></i>
             </button>
-            <button class="delete-button">
+            <button class="delete-button" data-idTask="${id}">
                 <i class="fas fa-trash-alt"></i>
             </button>
         </div>`
 
     document.getElementById('todoContainer').appendChild(div_task);
 }
+
+function deletarTodo(id){
+    let elemento = todos.find(todo =>todo.id === id)
+    let index = todos.indexOf(elemento);
+     todos.splice(index, 1)
+    
+}
+
+
 
 function validarInputs(input) {
     if (input.value.trim() == '') {
@@ -66,6 +78,7 @@ addForm.addEventListener('submit', function (e) {
         const obj = {};
         formData.forEach((value, key) => obj[key] = value);
         addTodotoArray(obj);
+        document.getElementById('extras').classList.remove('active');
         form.reset();
     }
 });
@@ -81,4 +94,17 @@ document.addEventListener('click', function (e) {
         document.getElementById('searchInput').classList.remove('active');
     }
 
+    if(e.target.closest('.task .delete-button')){
+      const button =  e.target.closest('.task .delete-button')
+      const task = button.parentElement.parentElement;
+      task.remove();
+      const id = task.dataset["idTask"]
+      deletarTodo(id)
+      console.log(todos);
+    }
+
+
 });
+
+
+
