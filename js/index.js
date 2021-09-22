@@ -41,13 +41,9 @@ function validarInputs(input) {
 
 }
 
-
+// Event listeners
 div_search.addEventListener('click', function (e) {
     document.getElementById('searchInput').classList.add('active');
-});
-
-div_search.addEventListener('focusout', function (e) {
-    document.getElementById('searchInput').classList.remove('active');
 });
 
 input_addTask.addEventListener('focus', function (e) {
@@ -61,14 +57,6 @@ input_addTask.addEventListener('keydown', function (e) {
     }
 });
 
-document.addEventListener('click', function (e) {
-    if (!e.target.closest('#sectionAddTodo')) {
-        document.getElementById('extras').classList.remove('active');
-        input_addTask.rows = 2;
-    }
-
-});
-
 addForm.addEventListener('submit', function (e) {
     e.preventDefault();
     const inputsValido = Array.from(addForm.querySelectorAll('input, textarea')).every(input => validarInputs(input));
@@ -80,4 +68,17 @@ addForm.addEventListener('submit', function (e) {
         addTodotoArray(obj);
         form.reset();
     }
+});
+
+// Global events listener
+document.addEventListener('click', function (e) {
+    if (!e.target.closest('#sectionAddTodo')) {
+        document.getElementById('extras').classList.remove('active');
+        input_addTask.rows = 1;
+    }
+
+    if(!e.target.closest('#search')){
+        document.getElementById('searchInput').classList.remove('active');
+    }
+
 });

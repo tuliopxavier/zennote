@@ -1,5 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100;1,300;1,400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100;1,300;1,400&display=swap");
 
+:root {
+    --bg-primary: #e5e7eb;
+    --bg-secondary: #fff;
+}
 * {
     margin: 0;
     padding: 0;
@@ -8,13 +12,7 @@
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
-}
-
-header {
-    width: 100%;
-    padding-top: 1rem;
-    padding-bottom: 2rem;
+    font-family: "Roboto", sans-serif;
 }
 
 button,
@@ -25,6 +23,12 @@ a {
     text-decoration: none;
 }
 
+/* Header */
+header {
+    width: 100%;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+}
 .container {
     max-width: 90%;
     margin-inline: auto;
@@ -65,15 +69,24 @@ a {
     height: 2rem;
     padding-left: 2rem;
     padding-right: 0.5rem;
-    transform: scaleX(0);
+    width: 2rem;
+    border-radius: 0.75rem;
     transform-origin: left;
     transition: all 0.3s ease-in-out;
     border: 0;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.3);
+}
+
+.search-input.active {
+    width: 100%;
+    border-radius: 0.75rem;
 }
 
 .filter-btn {
     height: 2rem;
     padding-inline: 0.7rem;
+    border-radius: 0.75rem;
+    margin-left: 0.25rem;
 }
 
 .filter-modal {
@@ -96,16 +109,15 @@ a {
     opacity: 0;
 }
 
-.search-input.active {
-    transform: scaleX(1);
-    border: 1px solid #ccc;
-}
-
+/* Parte de baixo de adicionar novas task */
 .section-add-todo {
     position: fixed;
     width: 100%;
     bottom: 0;
-    background-color: #ccc;
+    background-color: var(--bg-primary);
+    border-top-left-radius: 1.5rem 0.8rem;
+    border-top-right-radius: 1.5rem 0.8rem;
+    padding-top: 0.5rem;
 }
 
 .section-add-todo .extras {
@@ -119,8 +131,11 @@ a {
     height: 70px;
 }
 
-.section-add-todo .data-incial {
+.section-add-todo .extras > div {
+    padding: 1rem;
+}
 
+.section-add-todo .data-incial {
     margin-right: 1rem;
 }
 
@@ -132,37 +147,47 @@ a {
 }
 .section-add-todo .add-task textarea {
     width: 100%;
-    padding: 5px 20px 5px 10px;
-    border-radius: 10px;
-    border: 1px solid #000;
+    padding: 0.625rem 2.25rem 0.625rem 0.625rem;
+    border-radius: 0.75rem;
+    border: 0;
     resize: none;
+    font-size: 1rem;
+    line-height: 1.3rem;
+    box-shadow: 0 0 1px 1px #ccc;
+    color: #3f424a;
 }
 
 .section-add-todo .add-task button {
     position: absolute;
-    right: 15px;
-    bottom: 20px;
-    color: #5db075;
-    background-color: transparent;
+    right: 0.86rem;
+    bottom: 1.188rem;
+    color: white;
+    background-color: #5db075;
+    border-radius: 50%;
+    height: 1.875rem;
+    width: 1.875rem;
 }
 
 .section-add-todo .add-task button i {
     font-size: 1.8em;
 }
 
+/* Local onde as task ficam */
 .todo-container {
     padding: 1rem;
     display: flex;
     flex-direction: column;
-    padding-bottom: 70px;
+    padding-bottom: 4.375rem;
 }
 
+/* Task cards */
 .task {
     box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.302), 0 2px 6px 2px rgba(60, 64, 67, 0.149);
-    border-radius: 5px;
-    padding: 0.5rem;
+    border-radius: 0.75rem;
+    padding: 0.5rem 0.8rem;
     margin-bottom: 1rem;
     overflow: hidden;
+    position: relative;
 }
 
 .task .title-task {
@@ -177,12 +202,21 @@ a {
 }
 
 .task .check {
-    background-color: transparent;
-    padding: 0.5rem;
+    position: absolute;
+    left: 1rem;
+    top: 1rem;
+}
+
+.task .check:checked + p {
+    text-decoration: line-through;
 }
 
 .task .check i {
     font-size: 1.5em;
+}
+
+.task p {
+    text-indent: 2rem;
 }
 
 .task .options {
