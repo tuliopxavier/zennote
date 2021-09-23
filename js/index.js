@@ -110,12 +110,12 @@ document.addEventListener('click', function (e) {
     function mudarCor(cb) {
 
         elemento = document.getElementById("fundo");
-        icone = document.getElementsByClassName("fa-pen");
+        
 
 
     elemento.style.backgroundColor = cb.checked ? "#e8eaed" : "#202124";
     elemento.style.color = cb.checked ? "#202124" : "#e8eaed";
-    icone.style.color = cb.checked ? "#202124" : "#e8eaed";
+    
     };
 
 
