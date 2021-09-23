@@ -11,6 +11,48 @@
     box-sizing: border-box;
 }
 
+/* ESTILIZAÇÃO CARD CONFIRMAÇÃO DE EXCLUSÃO */
+.modal-delete-todo {
+    
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    z-index: 5;
+    top: 0;
+    background-color:rgba(0, 0, 0, 0.3);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.container-sim-nao {
+
+    background-color:white;
+    min-width: 250px;
+    width: 20%;
+    text-align: center;
+    padding: 3rem 0;
+    border-radius: 8px;
+
+}
+
+.container-sim-nao button:hover {
+    background-color:#202124;
+    color: #e8eaed;
+    transform: scale(1.1);
+}
+
+.container-sim-nao button {
+   border: none;
+   border-radius: 0.75rem;
+   padding: 1rem 2rem;
+   margin: 0.5rem;
+   transition: all 0.3 ease;
+}
+
+/* ESTILIZAÇÃO CARD CONFIRMAÇÃO DE EXCLUSÃO */
+
 /* Dark mode - Início ---------------------------------------------------------------------*/
 .btn-bk {
     font-size: 1.5rem;

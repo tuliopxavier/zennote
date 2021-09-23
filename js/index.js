@@ -13,6 +13,8 @@ function addTodotoArray(obj) {
     createTask(obj, idGlobal++);
 }
 
+
+/* FUNÇÃO CRIAR CARD */
 function createTask(obj, id) {
     const div_task = document.createElement('div');
     div_task.classList.add('task');
@@ -35,6 +37,8 @@ function createTask(obj, id) {
     document.getElementById('todoContainer').appendChild(div_task);
 }
 
+/* FUNÇÃO DELETAR CARD */
+
 function deletarTodo(id){
     let elemento = todos.find(todo =>todo.id === id)
     let index = todos.indexOf(elemento);
@@ -52,6 +56,19 @@ function validarInputs(input) {
     return true;
 
 }
+
+//Evento de Exclusão do card SIM NÃO
+/* document.getElementsByClassName('nao-delete').addEventListener('click', () => {
+    document.getElementsByClassName('modal-delete-todo').style.display = 'none';
+})
+
+document.getElementsByClassName('delete-button').addEventListener('click', () => {
+    document.getElementsByClassName('modal-delete-todo').style.display = 'flex';
+    })  */
+
+
+
+
 
 // Event listeners
 div_search.addEventListener('click', function (e) {
@@ -94,29 +111,32 @@ document.addEventListener('click', function (e) {
         document.getElementById('searchInput').classList.remove('active');
     }
 
-    if(e.target.closest('.task .delete-button')){
-      const button =  e.target.closest('.task .delete-button')
-      const task = button.parentElement.parentElement;
-      task.remove();
-      const id = task.dataset["idTask"]
-      deletarTodo(id)
-      console.log(todos);
-    }
+    
+
+  
+        if(e.target.closest('.task .delete-button')){
+            const button =  e.target.closest('.task .delete-button')
+            const task = button.parentElement.parentElement;
+            task.remove();
+            const id = task.dataset["idTask"]
+            deletarTodo(id)
+            console.log(todos);  
+        }
+ 
+    
 
 
 });
 
 /* FUNÇÃO DARK MODE */
-    function mudarCor(cb) {
+function mudarCor(cb) {
 
-        elemento = document.getElementById("fundo");
-        
-
-
-    elemento.style.backgroundColor = cb.checked ? "#e8eaed" : "#202124";
-    elemento.style.color = cb.checked ? "#202124" : "#e8eaed";
+elemento = document.getElementById("fundo");
     
-    };
+elemento.style.backgroundColor = cb.checked ? "#e8eaed" : "#202124";
+elemento.style.color = cb.checked ? "#202124" : "#e8eaed";
+    
+};
 
 
 

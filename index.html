@@ -55,6 +55,7 @@
     </header>
 
     <main>
+        
         <section>
             <div class="todo-container" id="todoContainer">
 
@@ -69,10 +70,21 @@
                         <button class="edit-button">
                             <i class="fas fa-pen"></i>
                         </button>
-                        <button class="delete-button">
+                        <button id="delete-button" class="delete-button">
                             <i class="fas fa-trash-alt"></i>
                         </button>
                     </div>
+                    <!-- MODAL DELETE TODO (CONFIRMAÇÃO DE EXCLUSÃO) -->
+                    <div class="modal-delete-todo">
+                        <div class="container-sim-nao">
+                            <p>Deseja realmente excluir?</p>
+                            <div>
+                                <button class="sim-delete" type="button" >SIM</button>
+                                <button class="nao-delete" type="button" >NÃO</button>
+                            </div> 
+                        </div>
+                    </div>
+                    <!-- MODAL DELETE TODO (CONFIRMAÇÃO DE EXCLUSÃO) -->    
                 </div>
 
             </div>
