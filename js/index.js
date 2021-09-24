@@ -7,6 +7,7 @@ const todos = [];
 let idGlobal = 0;
 
 
+
 function addTodotoArray(obj) {
     obj.id = idGlobal;
     todos.push(obj);
@@ -26,28 +27,60 @@ function createTask(obj, id) {
         <p class="title-task">${obj.title}</p>
         <div class="options">
             <span class="id-task">id: ${id}</span>
-            <button class="edit-button">
-                <i class="fas fa-pen"></i>
-            </button>
+           
             <button class="delete-button" data-idTask="${id}">
                 <i class="fas fa-trash-alt"></i>
             </button>
-        </div>`
+            <div class="modal-delete-todo">
+               <div class="container-sim-nao">
+                    <p>Deseja realmente excluir?</p>
+                        <div>
+                            <button class="sim-delete" type="button" >SIM</button>
+                            <button class="nao-delete" type="button" >NÃO</button>
+                        </div> 
+                    </div>
+                </div>
+            </div>`
 
     document.getElementById('todoContainer').appendChild(div_task);
+    removeTask();
 }
+
+/* Função Remover ToDo */
+
+function removeTask() {
+    let simDelete = document.querySelectorAll('.sim-delete');
+    let task = document.querySelectorAll('.task');
+    let naoDelete = document.querySelectorAll('.nao-delete');
+    let deleteModal = document.querySelectorAll('.modal-delete-todo');
+    let deleteButton = document.querySelectorAll('.delete-button');
+    for(let i=0; i < task.length; i++ ){
+        simDelete[i].addEventListener('click', () => {
+            task[i].remove();
+        })
+        naoDelete[i].addEventListener('click', () => {
+            deleteModal[i].style.display = "none";        
+        })
+        deleteButton[i].addEventListener('click', () => {
+            deleteModal[i].style.display = "flex";           
+        })
+    }
+}
+
+removeTask();
+
 
 /* FUNÇÃO DELETAR CARD */
 
-function deletarTodo(id){
+/* function deletarTodo(id){
     let elemento = todos.find(todo =>todo.id === id)
     let index = todos.indexOf(elemento);
      todos.splice(index, 1)
     
-}
+} */
 
 
-
+/* Função validar inputs */
 function validarInputs(input) {
     if (input.value.trim() == '') {
         alert('Campo vazio');
@@ -56,15 +89,6 @@ function validarInputs(input) {
     return true;
 
 }
-
-//Evento de Exclusão do card SIM NÃO
-/* document.getElementsByClassName('nao-delete').addEventListener('click', () => {
-    document.getElementsByClassName('modal-delete-todo').style.display = 'none';
-})
-
-document.getElementsByClassName('delete-button').addEventListener('click', () => {
-    document.getElementsByClassName('modal-delete-todo').style.display = 'flex';
-    })  */
 
 
 
@@ -114,14 +138,14 @@ document.addEventListener('click', function (e) {
     
 
   
-        if(e.target.closest('.task .delete-button')){
+       /*  if(e.target.closest('.task .delete-button')){
             const button =  e.target.closest('.task .delete-button')
             const task = button.parentElement.parentElement;
             task.remove();
             const id = task.dataset["idTask"]
             deletarTodo(id)
             console.log(todos);  
-        }
+        } */
  
     
 
