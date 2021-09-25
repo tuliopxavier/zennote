@@ -61,7 +61,6 @@
     display:flex !important;
     align-items: center;
     justify-content: center;
-    margin-bottom: 2rem !important;
   }
 
   
@@ -99,7 +98,6 @@ a {
 /* Header */
 header {
     width: 100%;
-    padding-top: 1rem;
     padding-bottom: 2rem;
 }
 .container {
@@ -277,7 +275,7 @@ header {
     width: 100%;
 }
 
-.task.tachado {
+.tachado p {
     text-decoration: line-through;
 }
 
@@ -320,3 +318,63 @@ header {
 .task .options button i {
     font-size: 1.2em;
 }
+
+
+/* Menu Superior */
+
+#menu-superior {
+    background-color: #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.5rem;
+    margin-bottom: 1rem;
+}
+
+#api-button img{
+    height: 2.5rem;
+}
+
+#api-button img:hover{
+    opacity: .5;
+    transform: scale(1.2);
+    animation: spin 1s ease-in;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg)}
+}
+
+#api-button i {
+    background-color: #fff;
+    border-radius: 50%;
+    padding: .25rem;
+    color: #202124;
+    font-size: 2rem;
+    text-decoration: none;
+}
+
+#api-button i:hover {
+    opacity: .75;
+    transform: scale(1.2);
+}
+
+.api-card {
+    background-color: #ccc;
+    padding: 1.5rem;
+    margin: 1rem 2rem;
+    border-radius: .5rem;
+
+}
+
+
+footer {
+    background-color: #ccc;
+    width: 100%;
+    padding: 1.5rem;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+}
+

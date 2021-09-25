@@ -161,6 +161,3 @@ elemento.style.backgroundColor = cb.checked ? "#e8eaed" : "#202124";
 elemento.style.color = cb.checked ? "#202124" : "#e8eaed";
     
 };
-
-
-
