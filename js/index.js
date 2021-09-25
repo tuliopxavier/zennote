@@ -6,14 +6,11 @@ const date = new Date();
 const todos = [];
 let idGlobal = 0;
 
-
-
 function addTodotoArray(obj) {
     obj.id = idGlobal;
     todos.push(obj);
     createTask(obj, idGlobal++);
 }
-
 
 /* FUNÇÃO CRIAR CARD */
 function createTask(obj, id) {
@@ -47,7 +44,6 @@ function createTask(obj, id) {
 }
 
 /* Função Remover ToDo */
-
 function removeTask() {
     let simDelete = document.querySelectorAll('.sim-delete');
     let task = document.querySelectorAll('.task');
@@ -66,19 +62,7 @@ function removeTask() {
         })
     }
 }
-
 removeTask();
-
-
-/* FUNÇÃO DELETAR CARD */
-
-/* function deletarTodo(id){
-    let elemento = todos.find(todo =>todo.id === id)
-    let index = todos.indexOf(elemento);
-     todos.splice(index, 1)
-    
-} */
-
 
 /* Função validar inputs */
 function validarInputs(input) {
@@ -87,12 +71,7 @@ function validarInputs(input) {
         return false;
     }
     return true;
-
 }
-
-
-
-
 
 // Event listeners
 div_search.addEventListener('click', function (e) {
@@ -134,30 +113,11 @@ document.addEventListener('click', function (e) {
     if(!e.target.closest('#search')){
         document.getElementById('searchInput').classList.remove('active');
     }
-
-    
-
-  
-       /*  if(e.target.closest('.task .delete-button')){
-            const button =  e.target.closest('.task .delete-button')
-            const task = button.parentElement.parentElement;
-            task.remove();
-            const id = task.dataset["idTask"]
-            deletarTodo(id)
-            console.log(todos);  
-        } */
- 
-    
-
-
 });
 
 /* FUNÇÃO DARK MODE */
-function mudarCor(cb) {
-
-elemento = document.getElementById("fundo");
-    
-elemento.style.backgroundColor = cb.checked ? "#e8eaed" : "#202124";
-elemento.style.color = cb.checked ? "#202124" : "#e8eaed";
-    
+function mudarCor(checkbox) {
+    document.body.style.backgroundColor = checkbox.checked ? "#202124" : "";
+    document.body.style.color = checkbox.checked ? "#e8eaed" : "";
+    document.getElementById("todoContainer").style.color = checkbox.checked ? "#202124" : ""; 
 };

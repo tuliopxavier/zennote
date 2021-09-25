@@ -1,18 +1,16 @@
 const container = document.getElementById("api-container");
-
 const url = "https://jsonplaceholder.typicode.com/todos/"
 
 fetch(url)
   .then((res) => res.json())
   .then((data) => {
-    data.forEach((todo) => {
+      data.forEach((todo) => {
         createTask(todo)
     });
   })
   .catch(function (error) {
     console.log(error);
   });
-
 
 function createTask({id, title, completed}) {
     const divApi = document.createElement('div');
@@ -27,5 +25,11 @@ function createTask({id, title, completed}) {
         <p class="api-title">${title}</p>
     `
     container.appendChild(divApi);
-
 }
+
+/* FUNÇÃO DARK MODE */
+function mudarCor(checkbox) {
+    document.body.style.backgroundColor = checkbox.checked ? "#202124" : "";
+    document.body.style.color = checkbox.checked ? "#e8eaed" : "";
+    container.style.color = checkbox.checked ? "#202124" : ""; 
+};

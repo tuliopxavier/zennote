@@ -266,6 +266,7 @@ header {
     margin-bottom: 1rem;
     overflow: hidden;
     position: relative;
+    background-color: #ccc;
 }
 
 .task .title-task {
@@ -302,7 +303,7 @@ header {
     justify-content: flex-end;
     align-items: center;
     margin-top: 0.5rem;
-    border-top: solid 1px #ccc;
+    border-top: solid 1px #202124;
 }
 
 .task .options .id-task {
