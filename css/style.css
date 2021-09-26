@@ -93,6 +93,8 @@ a {
     border: 0;
     outline: 0;
     text-decoration: none;
+   
+
 }
 
 /* Header */
@@ -142,7 +144,7 @@ header {
     transform-origin: left;
     transition: all 0.3s ease-in-out;
     border: 0;
-    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 8px 8px -4px rgb(55, 106, 122);
 }
 
 .search-input.active {
@@ -324,12 +326,14 @@ header {
 /* Menu Superior */
 
 #menu-superior {
-    background-color: #ccc;
+    background: rgb(58,159,180);
+    background: linear-gradient(90deg, rgba(58,159,180,1) 22%, rgba(202,29,253,1) 99%);
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 1rem 1.5rem;
     margin-bottom: 1rem;
+    box-shadow: 0 8px 8px -4px rgb(53, 90, 90);
 }
 
 #api-button img{
@@ -366,7 +370,15 @@ header {
     padding: 1.5rem;
     margin: 1rem 2rem;
     border-radius: .5rem;
+    box-shadow: 0 8px 8px -4px lightblue;
 
+}
+
+.api-card > h2{
+    background-color: white;
+    padding: 5px;
+    border-radius: 1rem;
+    display: inline-block;
 }
 
 
@@ -377,5 +389,23 @@ footer {
     text-align: center;
     position: fixed;
     bottom: 0;
+}
+
+footer > a{
+    display: inline-block;
+  background: linear-gradient(130deg,
+              rgba(251,251,254,.9),
+              rgba(251,251,254,.2));
+  padding: .75rem 1.5rem;
+  border-radius: .5rem;
+  color: var(--title-color);
+  font-weight: 500;
+  transition: .4s;
+}
+
+footer > a:hover{
+    background: linear-gradient(130deg,
+              rgba(251,251,254,1),
+              rgba(251,251,254,.4));
 }
 

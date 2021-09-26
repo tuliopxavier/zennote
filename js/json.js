@@ -32,4 +32,5 @@ function mudarCor(checkbox) {
     document.body.style.backgroundColor = checkbox.checked ? "#202124" : "";
     document.body.style.color = checkbox.checked ? "#e8eaed" : "";
     container.style.color = checkbox.checked ? "#202124" : ""; 
+    
 };
