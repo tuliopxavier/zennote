@@ -55,9 +55,17 @@ img{
   width: calc(100% - 3rem);
   margin-left: 1.5rem;
   margin-right: 1.5rem;
+  
 }
 
+
+
 /*========== CARD GLASS ==========*/
+
+#equipe02 {
+  margin-top:1.5rem;
+}
+
 .card{
   position: relative;
   overflow: hidden;
@@ -196,7 +204,7 @@ img{
   }
 
   .card__container{
-    height: 100vh;
+    height: 50vh;
     grid-template-columns: repeat(3, 1fr);
     align-content: center;
   }
