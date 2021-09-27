@@ -110,9 +110,13 @@ document.addEventListener('click', function (e) {
         input_addTask.rows = 1;
     }
 
-    if(!e.target.closest('#search')){
-        document.getElementById('searchInput').classList.remove('active');
-    }
+    if (!e.target.closest("#search")) {
+        if (search.value > "") {
+          return null;
+        } else {
+        document.getElementById("searchInput").classList.remove("active");
+        }
+      }
 });
 
 /* FUNÇÃO DARK MODE */
@@ -120,4 +124,21 @@ function mudarCor(checkbox) {
     document.body.style.backgroundColor = checkbox.checked ? "#202124" : "";
     document.body.style.color = checkbox.checked ? "#e8eaed" : "";
     document.getElementById("todoContainer").style.color = checkbox.checked ? "#202124" : ""; 
+};
+
+
+/* SEARCH INPUT */
+let search = document.getElementById("searchInput");
+search.onkeyup = () => {
+    let filter = search.value.toUpperCase();
+    let p = document.getElementsByTagName("p");
+
+    for (i = 0; i < p.length; i++) {
+        txtValue = p[i].textContent;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            p[i].parentElement.style.display = "";
+        } else {
+            p[i].parentElement.style.display = "none";
+        }
+    }
 };

@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100;1,300;1,400&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100;1,300;1,400&display=swap"); */
 
 :root {
     --bg-primary: #e5e7eb;
@@ -9,6 +9,8 @@
     padding: 0;
     outline: 0;
     box-sizing: border-box;
+    font-family: 'Bariol Regular', sans-serif;
+                                                
 }
 
 /* ESTILIZAÇÃO CARD CONFIRMAÇÃO DE EXCLUSÃO */
