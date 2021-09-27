@@ -100,6 +100,7 @@ addForm.addEventListener('submit', function (e) {
         addTodotoArray(obj);
         document.getElementById('extras').classList.remove('active');
         form.reset();
+        input_addTask.focus();
     }
 });
 
