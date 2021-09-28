@@ -8,6 +8,8 @@ A solução aqui proposta é uma aplicação to-do mobile first responsiva que c
 O código base foi desenvolvido em grupo, participaram Larissa Nunes, Felipe Soares, Rodrigo Brasil e Carlindo Junior. 
 Contribuições com melhorias e dicas são muito bem vidas. O código é aberto e livre para utilização.
 
+Link para aplicação: https://tuliopxavier.github.io/zennote/
+
 <hr>
 
 ### Instruções e requisitos do entregável
