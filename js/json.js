@@ -22,7 +22,7 @@ function createTask({ id, title, completed }) {
 
   divApi.innerHTML = `
         <h2 class="api-id">${id}</h2>
-        <p class="api-title">${title}</p>
+        <p class="api-title title-task">${title}</p>
     `;
   container.appendChild(divApi);
 }
