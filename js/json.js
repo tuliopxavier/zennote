@@ -79,4 +79,7 @@ document.addEventListener("click", function (e) {
   }
 });
 
-
+// click no zen mode, ativa o scroll down
+document.querySelector("h1").onclick = () => {
+  window.scrollTo(0, document.body.scrollHeight);
+}
