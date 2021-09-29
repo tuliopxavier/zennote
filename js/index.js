@@ -19,11 +19,16 @@ function createTask(obj, id) {
     if (obj.completed == true) {
         div_task.classList.add('tachado');
     }
+
     div_task.innerHTML = `
-        <input class="check" type="checkbox" name="" id="">
+        <input class="check" type="checkbox">
         <p class="title-task">${obj.title}</p>
         <div class="options">
             <span class="id-task">id: ${id}</span>
+            <span class="task-color green" title="green"></span>
+            <span class="task-color blue" title="blue"></span>
+            <span class="task-color red" title="red"></span>
+            <span class="task-color clean" title="clean"></span>
            
             <button class="delete-button" data-idTask="${id}">
                 <i class="fas fa-trash-alt"></i>
@@ -35,10 +40,11 @@ function createTask(obj, id) {
                     <button class="nao-delete" type="button">Cancelar</button>
                 </div> 
             </div>
-            </div>`
+        </div>`
 
     document.getElementById('todoContainer').appendChild(div_task);
     removeTask();
+    handleCardColor();
 }
 
 /* Função Remover ToDo */
@@ -102,15 +108,15 @@ input_addTask.addEventListener('focus', function (e) {
 //     }
 // });
 
-const form = document.getElementById("text-form");
-const textarea = document.getElementById("addTaskInput")
-textarea.onkeydown = (e) => {
-    if (e.key === "Enter") {
-        console.log("Enter");
-        e.preventDefault();
-        textarea.parentElement.submit();      
-    }
-};
+// const form = document.getElementById("text-form");
+// const textarea = document.getElementById("addTaskInput")
+// textarea.onkeydown = (e) => {
+//     if (e.key === "Enter") {
+//         console.log("Enter");
+//         e.preventDefault();
+//         textarea.parentElement.submit();      
+//     }
+// };
 
 
 addForm.addEventListener('submit', function (e) {
@@ -130,7 +136,10 @@ addForm.addEventListener('submit', function (e) {
 });
 
 // click no zen mode, ativa o scroll down e leva para o input
-document.querySelector("h1").onclick = (e) => window.scrollTo(0, document.body.scrollHeight);
+document.querySelector("h1").onclick = () => {
+    input_addTask.focus();
+    window.scrollTo(0, document.body.scrollHeight);
+}
 
 // a aplicação inicializa focando o input e mostrando as notas mais recentes
 window.onload = () => {
@@ -176,10 +185,14 @@ function handleTheme(e) {
         console.log("mudou para dark");
         themeIcons.style.transform = 'rotate(720deg)';
         themeIcons.innerText = 'brightness_5';
+        document.documentElement.style.setProperty('--primary-color', '#ffffff');
+        document.documentElement.style.setProperty('--background-color', '#222222');
     } else {
         console.log("mudou para light");
         themeIcons.style.transform = '';
         themeIcons.innerText = 'brightness_4'
+        document.documentElement.style.setProperty('--primary-color', '#222222');
+        document.documentElement.style.setProperty('--background-color', '#ffffff');
     }
 }
 
@@ -198,3 +211,12 @@ search.onkeyup = () => {
         }
     }
 };
+
+
+// SELECT COLORS
+function handleCardColor() {
+    const colors = document.querySelectorAll(".task-color");
+    colors.forEach(color => color.onclick = () => {
+        color.parentElement.parentElement.style.color = `${color.title}`; })
+};
+handleCardColor();

@@ -24,11 +24,11 @@
                 
                 <div class="btn-bk form-check form-switch">
                     <label for="handleTheme" id="theme-icons" class="material-icons">brightness_4</label>
-                    <input onclick="handleTheme(this)" class="form-check-input" type="checkbox" id="handleTheme">
+                    <input id="handleTheme" class="form-check-input" type="checkbox" onclick="handleTheme(this)">
                 </div>
 
                 <div class="title">
-                    <a href="#addTaskInput"><h1>zen note</h1></a>
+                    <h1>zen note</h1>
                 </div>
                 
                 <div id="api-button">
@@ -65,7 +65,32 @@
             <section>
                 <div class="todo-container" id="todoContainer">
 
-                    
+                    <div class="task">
+                        <input class="check" type="checkbox">
+                        <p class="title-task">Enim voluptatem et et corporis magni eum. Laboriosam nostrum fugiat dolores reprehenderit reiciendis et unde libero. Quo minus voluptatum fuga.</p>
+                        <div class="options">
+                            <span class="id-task">id: 0</span>
+                            <span class="task-color green" title="green"></span>
+                            <span class="task-color blue" title="blue"></span>
+                            <span class="task-color red" title="red"></span>
+                            <span class="task-color clear" title=""></span>
+                        
+                            <button class="delete-button">
+                                <i class="fas fa-trash-alt"></i>
+                            </button>
+                        </div>
+                        
+                        <div class="modal-delete-todo">
+                            <div class="container-sim-nao">
+                                <div>
+                                    <button class="sim-delete" type="button" >Excluir</button>
+                                    <button class="nao-delete" type="button">Cancelar</button>
+                                </div> 
+                            </div>
+                        </div>
+                          
+                    </div>
+
 
                 </div>
 

@@ -1,18 +1,20 @@
+// variables
+
 :root {
     --primary-color: #222222;
     --background-color: #ffffff;
 }
 
-$primary-color: var(--primary-color);
-$background-color: var(--background-color);
+$primary-color: #222222;
+$background-color: #ffffff;
+
+// global
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;    
-    color: var(--primary-color);
-    background-color: $background-color;       
+    font-family: 'Montserrat', sans-serif;       
 }
 
 html {
@@ -20,8 +22,8 @@ html {
 }
 
 body {
-    color: $primary-color;
-    background-color: $background-color;
+    color: var(--primary-color);
+    background-color: var(--background-color);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -29,20 +31,21 @@ body {
 }
 
 #main-container {
-    color: $primary-color;
-    background-color: $background-color;
+    color: var(--primary-color);
+    background-color: var(--background-color);
     width: 100%;
     max-width: 500px;
     height: 100vh;
-    transition: all 0.25s ease;
+    transition: all .25s ease;
 }
 
-/* ESTILIZAÇÃO CARD CONFIRMAÇÃO DE EXCLUSÃO */
+// confirm delete card
+
 .modal-delete-todo {
     width: 100%;
     height: 100%;
     position: absolute;
-    background-color: fade-out($background-color, 0.3);
+    background-color: #ffffff90;
     z-index: 1;
     top: 0;
     right: 0;
@@ -61,40 +64,39 @@ body {
 }
 
 .container-sim-nao button {
-    border: solid 1px $primary-color;
+    border: solid 1px var(--primary-color);
     border-radius: 1rem;
-    background-color: $primary-color;
-    color: $background-color;
+    background-color: var(--primary-color);
+    color: var(--background-color);
     height: 2rem;
     min-width: 5rem;
     padding: 0 1rem;
     margin: 0.5rem;
-    transition: all 0.25s ease;
+    transition: all .25s ease;
 }
 
 .container-sim-nao button:hover {
-    background-color: $background-color;
-    color: $primary-color;
+    background-color: var(--background-color);
+    color: var(--primary-color);
     transform: scale(1.05);
 }
 
 .container-sim-nao button:first-child:hover {
-    background-color: $background-color;
-    color: #ff3737;
-    border: solid 1px #ff3737;
+    background-color: var(--background-color);
+    color: #ff5050;
+    border: solid 1px #ff5050;
     transform: scale(1.05);
 }
 
 /* Dark mode - Início ---------------------------------------------------------------------*/
 
 .btn-bk.form-check.form-switch {
-    transition: all 1s ease;
     cursor: pointer;
 }
 
 #theme-icons .material-icons {
     display: flex;
-    transition: all 1s ease;
+    transition: all .25s ease;
     cursor: pointer;
 }
 
@@ -111,17 +113,19 @@ button, a, select {
     border: 0;
     outline: 0;
     text-decoration: none;
+
 }
 a:visited {
-    color: $primary-color;
+    color: var(--primary-color);
 }
 
 input, textarea, select {
-    background-color: $background-color;
-    color: $primary-color;
+    background-color: var(--background-color);
+    color: var(--primary-color);
 }
 
-/* Header */
+// Header
+
 header {
     width: 100%;
     max-width: 500px;
@@ -140,18 +144,11 @@ header {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    flex: 1 1 100%;
     text-align: center;
-    margin-bottom: -.5rem;
+    cursor: pointer;
 }
 
-.title img {
-    height: 1rem;
-    margin-right: .25rem;
-    margin-top: -.4rem;
-}
-
-.title h1, a {
+.title h1 {
     text-decoration: none;
     font-size: 1.5rem;
 }
@@ -192,9 +189,9 @@ header {
     width: 2rem;
     border-radius: 5rem;
     transform-origin: center right;
-    transition: width 0.3s ease-in-out;
-    border: solid 1px $primary-color;
-    background-color: $background-color;
+    transition: width .25s ease-in-out;
+    border: solid 1px var(--primary-color);
+    background-color: var(--background-color);
 
 }
 
@@ -209,14 +206,14 @@ header {
     padding-inline: 0.7rem;
     border-radius: 2rem;
     margin-left: 0.25rem;
-    color: $primary-color;
-    background-color: $background-color;
-    border: solid 1px $primary-color;
+    color: var(--primary-color);
+    background-color: var(--background-color);
+    border: solid 1px var(--primary-color);
 }
 
 .filter-btn {
-    background-color: $background-color;
-    color: solid 1px $primary-color;
+    background-color: var(--background-color);
+    color: solid 1px var(--primary-color);
 }
 
 /* Parte de baixo de adicionar novas task */
@@ -228,8 +225,8 @@ header {
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    background-color: $background-color;
-    border-top: solid 1px $primary-color;
+    background-color: var(--background-color);
+    border-top: solid 1px var(--primary-color);
     padding: .5rem 1rem;
 }
 
@@ -240,7 +237,7 @@ header {
     justify-content: space-between;
     height: 0;
     overflow: hidden;
-    transition: height 0.25s ease;
+    transition: height .25s ease;
 }
 
 .section-add-todo .extras.active {
@@ -257,7 +254,7 @@ header {
     font-size: .75rem;
     border-radius: 1rem;
     padding-left: .35rem;
-    border: solid 1px $primary-color;
+    border: solid 1px var(--primary-color);
 }
 
 .section-add-todo .data-incial input {
@@ -281,7 +278,7 @@ header {
     border-radius: 2rem;
     resize: auto;
     line-height: 1.3rem;
-    color: $primary-color;
+    color: var(--primary-color);
 }
 
 .section-add-todo .add-task textarea:focus {
@@ -292,8 +289,8 @@ header {
     position: absolute;
     right: 0.86rem;
     bottom: .75rem;
-    color: $background-color;
-    background-color: $primary-color;
+    color: var(--background-color);
+    background-color: var(--primary-color);
     border-radius: 50%;
     height: 1.875rem;
     width: 1.875rem;
@@ -315,19 +312,20 @@ header {
 }
 
 /* Task cards */
+
 .task {
     border-radius: 0.75rem;
-    /* border: solid 1px var(--primary-color); */
+    // border: solid 1px var(--primary-color);
     padding: 0 1rem 0 .5rem;
-    margin-bottom: 2rem;
+    // margin-bottom: .5rem;
     word-break: break-word;
     position: relative;
     /* background-color: var(--background-color); */
-    transition: all .5s ease;
+    transition: all .25s ease;
 }
 
 .task:last-child {
-    margin-bottom: 1.5rem;
+    margin-bottom: 2.2rem;
 }
 
 .task .title-task {
@@ -341,7 +339,7 @@ header {
 
 .tachado p {
     text-decoration: line-through;
-    color: #00000030;
+    opacity: .5;
 }
 
 .task .check {
@@ -356,7 +354,6 @@ header {
 .task .check:checked + p {
     text-decoration: line-through;
     color: #00000030;
-    
 }
 
 .task .check i {
@@ -374,13 +371,12 @@ header {
     justify-content: flex-end;
     align-items: center;
     padding: 0 1rem 0;
-    /* margin-top: -2rem; */
     transition: all .25s ease;
 }
 
 .task .options .id-task {
     /* margin-right: auto; */
-    margin-right: .5rem;
+    margin-right: 1rem;
     opacity: .3;
 }
 
@@ -388,6 +384,56 @@ header {
     opacity: 1;
 }
 
+.task .options button span {
+    background-color: var(--background-color);
+    color: var(--primary-color);
+    transition: transform .25s ease;
+    
+    &:hover {
+        transform: scale(1.3); 
+    }
+}
+
+.task .options .delete-button {
+    background-color: var(--background-color);
+    font-size: 1.5rem;
+}
+
+.task-color {
+    height: 1rem;
+    width: 1rem;
+    border-radius: 1rem;
+    margin-right: .5rem;
+    cursor: pointer;
+    transition: transform .25s ease;
+    
+    &:hover {
+        transform: scale(1.2);   
+    }
+    
+    &.green {
+        background-color: #108a00;
+    }
+    &.blue {
+        background-color: #1353ca;
+    }
+    &.red {
+        background-color: #ff5050;
+    }
+    &.clear {
+        border: solid 1px var(--primary-color);
+        margin-right: 1rem;
+    }
+}
+
+.fas.fa-trash-alt {
+    color: var(--primary-color);
+    transition: all .25s ease;
+
+    &:hover {
+        transform: rotate(5deg) scale(1.2);
+    }
+}
 
 /* Menu Superior */
 
@@ -396,20 +442,20 @@ header {
     top: 0;
     width: 100%;
     max-width: 500px;
-    color: $primary-color;
-    background-color: $background-color;
+    color: var(--primary-color);
+    background-color: var(--background-color);
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 1rem 1.5rem;
     margin-bottom: 1rem;
-    border-bottom: solid 1px $primary-color;
+    border-bottom: solid 1px var(--primary-color);
     z-index: 3;
     transition: all 0.25s ease;
 }
 
 #api-button span {
-    color: $primary-color;
+    color: var(--primary-color);
     font-size: 2rem;
     transition: all .25s ease-out;
 }
@@ -420,14 +466,14 @@ header {
 }
 
 .api-card {
-    background-color: $background-color;
+    background-color: var(--background-color);
     padding: 1.5rem;
     margin: 1rem 2rem;
     border-radius: .5rem;
 }
 
 .api-card > h2{
-    background-color: $background-color;
+    background-color: var(--background-color);
     padding: 5px;
     border-radius: 1rem;
     display: inline-block;
@@ -435,13 +481,13 @@ header {
 
 
 footer {
-    background-color: $background-color;
+    background-color: var(--background-color);
     width: 100%;
     padding: 1.5rem;
     text-align: center;
     position: fixed;
     bottom: 0;
-    margin-top: solid 1px $primary-color;
+    margin-top: solid 1px var(--primary-color);
 }
 
 footer > a{
@@ -451,9 +497,9 @@ footer > a{
               rgba(251,251,254,.2));
   padding: .75rem 1.5rem;
   border-radius: .5rem;
-  color: $primary-color;
+  color: var(--primary-color);
   font-weight: 500;
-  transition: .4s;
+  transition: .25s;
 }
 
 footer > a:hover{
