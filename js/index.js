@@ -28,7 +28,7 @@ function createTask(obj, id) {
             <span class="task-color green" title="green"></span>
             <span class="task-color blue" title="blue"></span>
             <span class="task-color red" title="red"></span>
-            <span class="task-color clean" title="clean"></span>
+            <span class="task-color clear" title=""></span>
            
             <button class="delete-button" data-idTask="${id}">
                 <i class="fas fa-trash-alt"></i>
@@ -102,15 +102,15 @@ input_addTask.addEventListener('focus', function (e) {
     document.getElementById('data').value = date.toLocaleDateString();
 });
 
-// const form = document.getElementById("text-form");
-// const textarea = document.getElementById("addTaskInput")
-// textarea.onkeydown = (e) => {
-//     if (e.key === "Enter") {
-//         console.log("Enter");
-//         e.preventDefault();
-//         textarea.parentElement.submit();      
-//     }
-// };
+const form = document.getElementById("text-form");
+const textarea = document.getElementById("addTaskInput")
+textarea.onkeydown = (e) => {
+    if (e.key === "Enter") {
+        e.preventDefault();
+        console.log("Enter");
+        document.getElementById("text-form").submit();      
+    }
+};
 
 
 addForm.addEventListener('submit', function (e) {
