@@ -102,12 +102,6 @@ input_addTask.addEventListener('focus', function (e) {
     document.getElementById('data').value = date.toLocaleDateString();
 });
 
-// input_addTask.addEventListener('keydown', function (e) {
-//     while (input_addTask.scrollHeight > input_addTask.offsetHeight) {
-//         input_addTask.rows += 1;
-//     }
-// });
-
 // const form = document.getElementById("text-form");
 // const textarea = document.getElementById("addTaskInput")
 // textarea.onkeydown = (e) => {
@@ -163,21 +157,7 @@ document.addEventListener('click', function (e) {
       }
 });
 
-/* FUNÇÃO DARK MODE */
-// function mudarCor(checkbox) {
-//     document.body.style.backgroundColor = checkbox.checked ? "#202124" : "";
-//     document.body.style.color = checkbox.checked ? "#e8eaed" : "";
-//     document.getElementById("todoContainer").style.color = checkbox.checked ? "#202124" : ""; 
-// };
-// function mudarCor(checkbox) {
-//     document.body.style.backgroundColor = (checkbox.checked) ? (
-//         document.documentElement.style.setProperty('$primary-color', '#ffffff'),
-//         document.documentElement.style.setProperty('$background-color', '#222222')
-//      ) : (
-//         document.documentElement.style.setProperty('$primary-color', '#222222'),
-//         document.documentElement.style.setProperty('$background-color', '#ffffff')
-//      );
-// }
+// CHANGE THEME
 
 function handleTheme(e) {
     let themeIcons = document.getElementById('theme-icons');
@@ -196,7 +176,7 @@ function handleTheme(e) {
     }
 }
 
-/* SEARCH INPUT */
+// SEARCH INPUT
 let search = document.getElementById("searchInput");
 search.onkeyup = () => {
     let filter = search.value.toUpperCase();

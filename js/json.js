@@ -27,14 +27,29 @@ function createTask({ id, title, completed }) {
   container.appendChild(divApi);
 }
 
-/* FUNÇÃO DARK MODE */
-function mudarCor(checkbox) {
-  document.body.style.backgroundColor = checkbox.checked ? "#202124" : "";
-  document.body.style.color = checkbox.checked ? "#e8eaed" : "";
-  container.style.color = checkbox.checked ? "#202124" : "";
+
+
+
+// CHANGE THEME
+
+function handleTheme(e) {
+  let themeIcons = document.getElementById('theme-icons');
+  if (e.checked) {
+      console.log("mudou para dark");
+      themeIcons.style.transform = 'rotate(720deg)';
+      themeIcons.innerText = 'brightness_5';
+      document.documentElement.style.setProperty('--primary-color', '#ffffff');
+      document.documentElement.style.setProperty('--background-color', '#222222');
+  } else {
+      console.log("mudou para light");
+      themeIcons.style.transform = '';
+      themeIcons.innerText = 'brightness_4'
+      document.documentElement.style.setProperty('--primary-color', '#222222');
+      document.documentElement.style.setProperty('--background-color', '#ffffff');
+  }
 }
 
-/* SEARCH INPUT */
+// SEARCH INPUT
 let search = document.getElementById("searchInput");
 search.onkeyup = () => {
   let filter = search.value.toUpperCase();
@@ -63,3 +78,5 @@ document.addEventListener("click", function (e) {
     }
   }
 });
+
+

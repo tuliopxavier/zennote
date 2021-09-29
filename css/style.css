@@ -445,7 +445,7 @@ header {
 
 #api-button span {
   color: var(--primary-color);
-  font-size: 2rem;
+  font-size: 1.5rem;
   transition: all .25s ease-out;
 }
 
@@ -469,8 +469,10 @@ header {
 }
 
 footer {
+  border-top: solid 1px var(--primary-color);
   background-color: var(--background-color);
   width: 100%;
+  max-width: 500px;
   padding: 1.5rem;
   text-align: center;
   position: fixed;

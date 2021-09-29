@@ -90,9 +90,6 @@ body {
 
 /* Dark mode - Início ---------------------------------------------------------------------*/
 
-#switch-theme {
-}
-
 input[type="checkbox"]#handleTheme {
     display: none;
 }
@@ -462,10 +459,9 @@ header {
     z-index: 3;
     transition: all 0.25s ease;
 }
-
 #api-button span {
     color: var(--primary-color);
-    font-size: 2rem;
+    font-size: 1.5rem;
     transition: all .25s ease-out;
 }
 
@@ -490,8 +486,10 @@ header {
 
 
 footer {
+    border-top: solid 1px var(--primary-color);
     background-color: var(--background-color);
     width: 100%;
+    max-width: 500px;
     padding: 1.5rem;
     text-align: center;
     position: fixed;
@@ -499,7 +497,7 @@ footer {
     margin-top: solid 1px var(--primary-color);
 }
 
-footer > a{
+footer > a {
     display: inline-block;
   background: linear-gradient(130deg,
               rgba(251,251,254,.9),
