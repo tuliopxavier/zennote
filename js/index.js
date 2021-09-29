@@ -6,13 +6,14 @@ const date = new Date();
 const todos = [];
 let idGlobal = 1;
 
+// ADD NOTE TO ARRAY
 function addTodotoArray(obj) {
     obj.id = idGlobal;
     todos.push(obj);
     createTask(obj, idGlobal++);
 }
 
-/* FUNÇÃO CRIAR CARD */
+// CREATE NOTE
 function createTask(obj, id) {
     const div_task = document.createElement('div');
     div_task.classList.add('task');
@@ -47,7 +48,7 @@ function createTask(obj, id) {
     handleCardColor();
 }
 
-/* Função Remover ToDo */
+// REMOVE TO-DO
 function removeTask() {
     let simDelete = document.querySelectorAll('.sim-delete');
     let task = document.querySelectorAll('.task');
@@ -72,8 +73,7 @@ function removeTask() {
 }
 removeTask();
 
-/* Função validar inputs */
-
+// INPUTS VALIDATION
 let titleInput = document.getElementById('addTaskInput');
 titleInput.onfocus = () => {
     titleInput.style.boxShadow = "";
@@ -92,26 +92,6 @@ function validarInputs(input) {
     return true;
 }
 
-// Event listeners
-div_search.addEventListener('click', function (e) {
-    document.getElementById('searchInput').classList.add('active');
-});
-
-input_addTask.addEventListener('focus', function (e) {
-    document.getElementById('extras').classList.add('active');
-    document.getElementById('data').value = date.toLocaleDateString();
-});
-
-const form = document.getElementById("text-form");
-const textarea = document.getElementById("addTaskInput")
-textarea.onkeydown = (e) => {
-    if (e.key === "Enter") {
-        e.preventDefault();
-        console.log("Enter");
-        document.getElementById("text-form").submit();      
-    }
-};
-
 
 addForm.addEventListener('submit', function (e) {
     e.preventDefault();
@@ -124,24 +104,13 @@ addForm.addEventListener('submit', function (e) {
         addTodotoArray(obj);
         document.getElementById('extras').classList.remove('active');
         form.reset();
+        input_addTask.blur();
         input_addTask.focus();
         window.scrollTo(0, document.body.scrollHeight);
     }
 });
 
-// click no zen mode, ativa o scroll down e leva para o input
-document.querySelector("h1").onclick = () => {
-    input_addTask.focus();
-    window.scrollTo(0, document.body.scrollHeight);
-}
-
-// a aplicação inicializa focando o input e mostrando as notas mais recentes
-window.onload = () => {
-    input_addTask.focus();
-    window.scrollTo(0, document.body.scrollHeight);
-}
-
-// Global events listener
+// GLOBAL EVENT LISTENERS
 document.addEventListener('click', function (e) {
     if (!e.target.closest('#sectionAddTodo')) {
         document.getElementById('extras').classList.remove('active');
@@ -157,8 +126,51 @@ document.addEventListener('click', function (e) {
       }
 });
 
-// CHANGE THEME
+div_search.addEventListener('click', function () {
+    document.getElementById('searchInput').classList.add('active');
+});
 
+input_addTask.addEventListener('focus', function () {
+    document.getElementById('extras').classList.add('active');
+    document.getElementById('data').value = date.toLocaleDateString();
+});
+
+// submeter formulário ao pressionar enter
+const textarea = document.getElementById("addTaskInput")
+textarea.onkeydown = (e) => {
+    if (e.key === "Enter") {
+        e.preventDefault();
+        e = new FormData(addForm);
+        const inputsValido = Array.from(addForm.querySelectorAll('input, textarea')).every(input => validarInputs(input));
+        if (inputsValido) {
+            // const form = e.target;
+            const formData = new FormData(addForm);
+            const obj = {};
+            formData.forEach((value, key) => obj[key] = value);
+            addTodotoArray(obj);
+            document.getElementById('extras').classList.remove('active');
+            addForm.reset();
+            input_addTask.blur();
+            input_addTask.focus();
+            window.scrollTo(0, document.body.scrollHeight);
+        }
+    }
+};
+
+
+// clicando no zen mode, ativa o scroll down e leva para o input
+document.querySelector("h1").onclick = () => {
+    input_addTask.focus();
+    window.scrollTo(0, document.body.scrollHeight);
+}
+
+// a aplicação inicializa focando o input e mostrando as notas mais recentes
+window.onload = () => {
+    input_addTask.focus();
+    window.scrollTo(0, document.body.scrollHeight);
+}
+
+// CHANGE THEME
 function handleTheme(e) {
     let themeIcons = document.getElementById('theme-icons');
     if (e.checked) {
@@ -191,7 +203,6 @@ search.onkeyup = () => {
         }
     }
 };
-
 
 // SELECT COLORS
 function handleCardColor() {
