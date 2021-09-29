@@ -90,19 +90,28 @@ body {
 
 /* Dark mode - Início ---------------------------------------------------------------------*/
 
-.btn-bk.form-check.form-switch {
-    cursor: pointer;
-}
-
-#theme-icons .material-icons {
-    display: flex;
-    transition: all .25s ease;
-    cursor: pointer;
+#switch-theme {
 }
 
 input[type="checkbox"]#handleTheme {
     display: none;
 }
+
+#theme-icons .material-icons {
+    display: flex;
+}
+
+#theme-icons {
+    transition: all 1s ease;
+    font-size: 1.75rem;
+
+    &:hover {
+        opacity: .8;
+        transform: rotate(0deg) scale(1.05);
+        cursor: pointer;
+    }
+}
+
 
 
  /* Dark mode - Fim---------------------------------------------------------------*/
@@ -260,7 +269,7 @@ header {
 .section-add-todo .data-incial input {
     width: 4.5rem;
     border: none;
-    padding: .25rem .5rem;
+    padding: .25rem .25rem;
 }
 
 .section-add-todo .add-task {
@@ -330,7 +339,7 @@ header {
 
 .task .title-task {
     word-wrap: break-word;
-    font-size: 1rem;
+    font-size: .9rem;
     text-align: left;
     width: 100%;
     margin-left: 1rem;
