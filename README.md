@@ -11,6 +11,8 @@ Contribuições com melhorias e dicas são muito bem vidas. O código é aberto 
 Link para aplicação: https://tuliopxavier.github.io/zennote/
 
 <hr>
+<img src="./assets/img/zen-note-interface.png" alt="two mobile application interfaces with light and dark themes"/>
+<hr>
 
 ### Instruções e requisitos do entregável
 	
