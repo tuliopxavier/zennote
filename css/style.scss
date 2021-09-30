@@ -312,6 +312,7 @@ header {
     width: 100%;
     outline: none;
     resize: none;
+    overflow: hidden;
     border: 1px solid var(--primary-color);
     padding: .5rem .5rem .5rem 1rem;
     border-radius: 2rem;
