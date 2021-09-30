@@ -207,6 +207,42 @@ header {
   color: solid 1px var(--primary-color);
 }
 
+#categories-container {
+  position: absolute;
+  top: -1rem;
+  right: 0;
+  border: solid 1px var(--primary-color);
+  height: 100vh;
+  background-color: var(--background-color);
+  width: 75%;
+  z-index: 3;
+  opacity: 0;
+  transform: translateX(100%);
+  transition: all .25s ease;
+}
+
+#categories-container #categories-header {
+  border-bottom: solid 1px var(--primary-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#categories-container #categories-header span {
+  font-size: 1.5rem;
+  padding: 1rem;
+  transition: all .25s ease;
+  cursor: pointer;
+}
+
+#categories-container #categories-header span:hover {
+  transform: rotate(-15deg) scale(1.1);
+}
+
+#categories-container #categories-header h3 {
+  font-size: 1rem;
+}
+
 /* Parte de baixo de adicionar novas task */
 .section-add-todo {
   width: 100%;
@@ -304,11 +340,11 @@ header {
 
 /* Task cards */
 .task {
+  width: fit-content;
   border-radius: 0.75rem;
   padding: 0 1rem 0 .5rem;
   word-break: break-word;
   position: relative;
-  /* background-color: var(--background-color); */
   transition: all .25s ease;
 }
 

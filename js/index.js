@@ -74,20 +74,20 @@ function removeTask() {
 removeTask();
 
 // INPUTS VALIDATION
-let titleInput = document.getElementById('addTaskInput');
-titleInput.onfocus = () => {
-    titleInput.style.boxShadow = "";
-    titleInput.placeholder = "Adicionar nota"
+input_addTask.onfocus = () => {
+    document.getElementById('extras').classList.add('active');
+    input_addTask.style.boxShadow = "";
+    input_addTask.placeholder = "Adicionar nota"
 }
 
 function validarInputs(input) {
     if (input.value.trim() == '') {
-        titleInput.style.boxShadow = "0 0 0 1px #ff0000";
-        titleInput.placeholder = " <<< Preenchimento obrigatório >>> "
+        input_addTask.style.boxShadow = "0 0 0 1px #ff0000";
+        input_addTask.placeholder = " <<< Preenchimento obrigatório >>> "
         return false;
     } else {
-        titleInput.style.boxShadow = "";
-        titleInput.placeholder = "Adicionar nota"
+        input_addTask.style.boxShadow = "";
+        input_addTask.placeholder = "Adicionar nota"
     }
     return true;
 }
@@ -112,7 +112,7 @@ addForm.addEventListener('submit', function (e) {
 
 // GLOBAL EVENT LISTENERS
 document.addEventListener('click', function (e) {
-    if (!e.target.closest('#sectionAddTodo')) {
+    if (!e.target.closest('#sectionAddTodo') && !e.target.closest('h1')) {
         document.getElementById('extras').classList.remove('active');
         input_addTask.rows = 1;
     }
@@ -124,6 +124,12 @@ document.addEventListener('click', function (e) {
         document.getElementById("searchInput").classList.remove("active");
         }
       }
+
+    if (!e.target.closest("#categories-container") && !e.target.closest(".filter-btn") && !e.target.closest('#switch-theme')) {
+        document.getElementById('categories-container').style.transform = 'translateX(100%)';
+        document.getElementById('categories-container').style.opacity = 0;
+        setTimeout(() => document.getElementById('categories-container').style.display = 'none',500)
+    }
 });
 
 div_search.addEventListener('click', function () {
@@ -142,8 +148,8 @@ textarea.onkeydown = (e) => {
         e.preventDefault();
         e = new FormData(addForm);
         const inputsValido = Array.from(addForm.querySelectorAll('input, textarea')).every(input => validarInputs(input));
+
         if (inputsValido) {
-            // const form = e.target;
             const formData = new FormData(addForm);
             const obj = {};
             formData.forEach((value, key) => obj[key] = value);
@@ -157,17 +163,37 @@ textarea.onkeydown = (e) => {
     }
 };
 
+const resizeTaskBox = () => {
+    let task = document.querySelectorAll('.task');
+    let titleTask = document.querySelectorAll('.title-task');
+    for (let i = 0; i < task.length; i++) {
+        task[i].style.width = titleTask[i].offsetWidth +'px'
+    }
+}
 
 // clicando no zen mode, ativa o scroll down e leva para o input
 document.querySelector("h1").onclick = () => {
     input_addTask.focus();
     window.scrollTo(0, document.body.scrollHeight);
+    document.getElementById('extras').classList.add('active');
 }
 
 // a aplicação inicializa focando o input e mostrando as notas mais recentes
 window.onload = () => {
     input_addTask.focus();
     window.scrollTo(0, document.body.scrollHeight);
+}
+
+// open and close categories list
+document.querySelector('.filter-btn').onclick = () => {
+    document.getElementById('categories-container').style.transform = 'translateX(0%)';
+    document.getElementById('categories-container').style.opacity = 1;
+    document.getElementById('categories-container').style.display = '';
+}
+document.getElementById('close-categories').onclick = () => {
+    document.getElementById('categories-container').style.transform = 'translateX(100%)';
+    document.getElementById('categories-container').style.opacity = 0;
+    setTimeout(() => document.getElementById('categories-container').style.display = 'none',500)  
 }
 
 // CHANGE THEME
