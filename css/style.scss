@@ -8,7 +8,7 @@
 $primary-color: #222222;
 $background-color: #ffffff;
 
-// global
+// Global
 
 * {
     margin: 0;
@@ -30,6 +30,22 @@ body {
     transition: all .25s ease;
 }
 
+button, a, select {
+    cursor: pointer;
+    border: 0;
+    outline: 0;
+    text-decoration: none;
+
+}
+a:visited {
+    color: var(--primary-color);
+}
+
+input, textarea, select {
+    background-color: var(--background-color);
+    color: var(--primary-color);
+}
+
 #main-container {
     color: var(--primary-color);
     background-color: var(--background-color);
@@ -39,7 +55,7 @@ body {
     transition: all .25s ease;
 }
 
-// confirm delete card
+// Modal delete task
 
 .modal-delete-todo {
     width: 100%;
@@ -88,7 +104,7 @@ body {
     transform: scale(1.05);
 }
 
-/* Dark mode - Início ---------------------------------------------------------------------*/
+// Dark and Light mode
 
 input[type="checkbox"]#handleTheme {
     display: none;
@@ -109,26 +125,6 @@ input[type="checkbox"]#handleTheme {
     }
 }
 
-
-
- /* Dark mode - Fim---------------------------------------------------------------*/
-
-
-button, a, select {
-    cursor: pointer;
-    border: 0;
-    outline: 0;
-    text-decoration: none;
-
-}
-a:visited {
-    color: var(--primary-color);
-}
-
-input, textarea, select {
-    background-color: var(--background-color);
-    color: var(--primary-color);
-}
 
 // Header
 
@@ -198,7 +194,6 @@ header {
     transition: width .25s ease-in-out;
     border: solid 1px var(--primary-color);
     background-color: var(--background-color);
-
 }
 
 .search-input.active {
@@ -258,7 +253,7 @@ header {
     }
 }
 
-/* Parte de baixo de adicionar novas task */
+// Container adicionar novas task
 
 .section-add-todo {
     width: 100%;
@@ -342,7 +337,7 @@ header {
     justify-content: center;
 }
 
-/* Local onde as task ficam */
+// Main container to-do
 .todo-container {
     width: 90%;
     max-width: 500px;
@@ -354,8 +349,7 @@ header {
     margin-top: 1rem;
 }
 
-/* Task cards */
-
+// Task cards
 .task {
     width: fit-content;
     border-radius: 0.75rem;
@@ -477,7 +471,7 @@ header {
     }
 }
 
-/* Menu Superior */
+// Upper menu
 
 #menu-superior {
     position: fixed;
@@ -520,7 +514,7 @@ header {
     display: inline-block;
 }
 
-
+// Footer
 footer {
     border-top: solid 1px var(--primary-color);
     background-color: var(--background-color);
