@@ -237,3 +237,4 @@ function handleCardColor() {
         color.parentElement.parentElement.style.color = `${color.title}`; })
 };
 handleCardColor();
+
