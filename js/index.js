@@ -141,7 +141,7 @@ input_addTask.addEventListener('focus', function () {
     document.getElementById('data').value = date.toLocaleDateString();
 });
 
-// submeter formulário ao pressionar enter
+// PRESS ENTER / SUBMIT FORM
 const textarea = document.getElementById("addTaskInput")
 textarea.onkeydown = (e) => {
     if (e.key === "Enter") {
@@ -171,20 +171,20 @@ const resizeTaskBox = () => {
     }
 }
 
-// clicando no zen mode, ativa o scroll down e leva para o input
+// ZEN MODE CLICK / SCROLLING DOWN TO INPUT
 document.querySelector("h1").onclick = () => {
     input_addTask.focus();
     window.scrollTo(0, document.body.scrollHeight);
     document.getElementById('extras').classList.add('active');
 }
 
-// a aplicação inicializa focando o input e mostrando as notas mais recentes
+// STARTING APP FOCUSING ON INPUT AND SHOWING RECENT NOTES
 window.onload = () => {
     input_addTask.focus();
     window.scrollTo(0, document.body.scrollHeight);
 }
 
-// open and close categories list
+// OPEN/CLOSE CATEGORIES LIST
 document.querySelector('.filter-btn').onclick = () => {
     document.getElementById('categories-container').style.transform = 'translateX(0%)';
     document.getElementById('categories-container').style.opacity = 1;
@@ -230,7 +230,7 @@ search.onkeyup = () => {
     }
 };
 
-// SELECT COLORS
+// SELECT NOTE COLORS
 function handleCardColor() {
     const colors = document.querySelectorAll(".task-color");
     colors.forEach(color => color.onclick = () => {
